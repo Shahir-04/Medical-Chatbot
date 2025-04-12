@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    {%if message%}
+        <p style="color: red;">{{message}}</p>
+    {% endif %}
+    <h3>Registration Form</h3>
+    <form action="/enter" method="post">
+        <label>Username</label>:
+        <input type="text" name="username" required><br>
+        <label>Email</label>:
+        <input type="email" name="email" required><br>
+        <label>Password</label>:
+        <input type="password" name="password" required><br><br>
+        <input type="submit" value="Register">
+    </form>
+    <p>Already a member?<a href="/">Login here</a></p>
+</body>
+</html>
